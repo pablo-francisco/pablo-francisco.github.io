@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Portfólio de Ciência de Dados</title>
+  <meta name="description" content="Portfólio de ciência de dados com projetos de machine learning, análise de dados, experiência profissional e formação acadêmica.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Portfólio de Ciência de Dados">
+  <meta property="og:description" content="Projetos de machine learning, análise de dados, experiência profissional e formação acadêmica.">
+  <meta name="theme-color" content="#F4F7F6">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <script>
+    (function () { try { var t = localStorage.getItem("tema"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {} })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/common.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="topo__inner container">
+      <a class="marca" id="marca" href="index.html">&nbsp;</a>
+      <nav class="nav" aria-label="Seções do site">
+        <button class="nav__toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-lista">Menu</button>
+        <ul class="nav__lista" id="nav-lista">
+          <li><a href="#perfil">Perfil</a></li>
+          <li><a href="#experiencia">Experiência</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#formacao">Formação</a></li>
+          <li><a href="#certificacoes">Certificações</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="botao-tema" id="botao-tema" type="button" aria-label="Alternar tema"></button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <noscript>
+      <p class="container aviso-js">Este portfólio precisa de JavaScript ativado para exibir o conteúdo.</p>
+    </noscript>
+
+    <!-- Apresentação -->
+    <section class="hero container" aria-labelledby="hero-nome">
+      <div class="hero__texto">
+        <p class="hero__cargo" id="hero-cargo"></p>
+        <h1 class="hero__nome" id="hero-nome"></h1>
+        <p class="hero__resumo" id="hero-resumo"></p>
+        <div class="hero__acoes" id="hero-acoes"></div>
+      </div>
+      <figure class="hero__grafico">
+        <canvas id="grafico-hero" aria-hidden="true"></canvas>
+        <figcaption>Cada ponto é um problema de negócio. A curva é o modelo que ajuda a entendê-los.</figcaption>
+      </figure>
+    </section>
+
+    <!-- Perfil profissional -->
+    <section class="secao" id="perfil" aria-labelledby="t-perfil">
+      <div class="container secao__grade">
+        <div class="secao__cab">
+          <h2 id="t-perfil">Perfil profissional</h2>
+        </div>
+        <div id="perfil-conteudo"></div>
+      </div>
+    </section>
+
+    <!-- Competências -->
+    <section class="secao" id="competencias" aria-labelledby="t-competencias">
+      <div class="container secao__grade">
+        <div class="secao__cab">
+          <h2 id="t-competencias">Competências técnicas</h2>
+          <p>Ferramentas e métodos que uso no dia a dia.</p>
+        </div>
+        <div class="competencias" id="competencias-conteudo"></div>
+      </div>
+    </section>
+
+    <!-- Experiência profissional -->
+    <section class="secao" id="experiencia" aria-labelledby="t-experiencia">
+      <div class="container secao__grade">
+        <div class="secao__cab">
+          <h2 id="t-experiencia">Experiência profissional</h2>
+          <p>Da mais recente para a mais antiga.</p>
+        </div>
+        <ol class="linha-tempo" id="experiencia-conteudo"></ol>
+      </div>
+    </section>
+
+    <!-- Projetos -->
+    <section class="secao secao--projetos" id="projetos" aria-labelledby="t-projetos">
+      <div class="container">
+        <div class="projetos-cab">
+          <div>
+            <h2 id="t-projetos">Projetos pessoais</h2>
+            <p>Clique em um projeto para ler o resumo completo. <span id="contagem-projetos" aria-live="polite"></span></p>
+          </div>
+          <div class="filtros" id="filtros" role="group" aria-label="Filtrar projetos por área"></div>
+        </div>
+        <div class="grade-projetos" id="grade-projetos"></div>
+      </div>
+    </section>
+
+    <!-- Formação acadêmica -->
+    <section class="secao" id="formacao" aria-labelledby="t-formacao">
+      <div class="container secao__grade">
+        <div class="secao__cab">
+          <h2 id="t-formacao">Formação acadêmica</h2>
+        </div>
+        <ol class="lista-formacao" id="formacao-conteudo"></ol>
+      </div>
+    </section>
+
+    <!-- Certificações -->
+    <section class="secao" id="certificacoes" aria-labelledby="t-certificacoes">
+      <div class="container secao__grade">
+        <div class="secao__cab">
+          <h2 id="t-certificacoes">Certificações e cursos</h2>
+        </div>
+        <ul class="lista-simples" id="certificacoes-conteudo"></ul>
+      </div>
+    </section>
+
+    <!-- Publicações e palestras -->
+    <section class="secao" id="publicacoes" aria-labelledby="t-publicacoes">
+      <div class="container secao__grade">
+        <div class="secao__cab">
+          <h2 id="t-publicacoes">Publicações e palestras</h2>
+        </div>
+        <ul class="lista-simples" id="publicacoes-conteudo"></ul>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="secao secao--contato" id="contato" aria-labelledby="t-contato">
+      <div class="container secao__grade">
+        <div class="secao__cab">
+          <h2 id="t-contato" class="titulo-contato">Vamos conversar</h2>
+          <p id="contato-convite"></p>
+        </div>
+        <div>
+          <ul class="contato-links" id="contato-links"></ul>
+          <p class="aviso-copia" id="aviso-copia" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape__inner">
+      <p id="rodape-texto"></p>
+      <div class="rodape__redes" id="rodape-redes"></div>
+    </div>
+  </footer>
+</body>
+</html>

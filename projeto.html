@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Projeto | Portfólio de Ciência de Dados</title>
+  <meta name="description" content="Resumo de projeto de ciência de dados.">
+  <meta name="theme-color" content="#F4F7F6">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <script>
+    (function () { try { var t = localStorage.getItem("tema"); if (t) document.documentElement.setAttribute("data-theme", t); } catch (e) {} })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/common.js" defer></script>
+  <script src="assets/js/projeto.js" defer></script>
+</head>
+<body class="pagina-projeto">
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topo">
+    <div class="topo__inner container">
+      <a class="marca" id="marca" href="index.html">&nbsp;</a>
+      <nav class="nav" aria-label="Seções do site">
+        <button class="nav__toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-lista">Menu</button>
+        <ul class="nav__lista" id="nav-lista">
+          <li><a href="index.html#perfil">Perfil</a></li>
+          <li><a href="index.html#experiencia">Experiência</a></li>
+          <li><a href="index.html#projetos" aria-current="true">Projetos</a></li>
+          <li><a href="index.html#formacao">Formação</a></li>
+          <li><a href="index.html#certificacoes">Certificações</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <button class="botao-tema" id="botao-tema" type="button" aria-label="Alternar tema"></button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <noscript>
+      <p class="container aviso-js">Esta página precisa de JavaScript ativado para exibir o projeto.</p>
+    </noscript>
+  </main>
+
+  <dialog class="ampliacao" id="ampliacao" aria-label="Imagem ampliada">
+    <button class="ampliacao__fechar" type="button" aria-label="Fechar imagem ampliada"></button>
+    <figure>
+      <img src="" alt="">
+      <figcaption></figcaption>
+    </figure>
+  </dialog>
+
+  <footer class="rodape">
+    <div class="container rodape__inner">
+      <p id="rodape-texto"></p>
+      <div class="rodape__redes" id="rodape-redes"></div>
+    </div>
+  </footer>
+</body>
+</html>
