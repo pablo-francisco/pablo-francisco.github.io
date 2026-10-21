@@ -213,7 +213,7 @@ window.PORTFOLIO = {
         "Investigação de por que a margem de contribuição dos restaurantes corporativos de uma operadora de refeições coletivas caiu de 29,4% para 21,6% em um ano, mesmo com reajuste anual de preço.",
       capa: "assets/img/projetos/margem-corporativa/capa.svg",
       github: "https://github.com/pablo-francisco/NUTRIA-ANALYSIS",
-      demo: "https://nutria-analysis-teste-pablo.streamlit.app/",
+      demo: "https://nutria-analysis-teste-pablo.streamlit.app",
       stack: ["Python", "SQL (SQLite)", "pandas", "matplotlib", "Streamlit"],
       contexto:
         "Empresas de refeições coletivas cobram por refeição servida, mas pagam pela comida produzida, então qualquer descompasso entre as duas vira prejuízo. Montei um banco relacional com 22 tabelas de uma empresa fictícia (produção diária, faturamento, compras, folha, CRM, catraca dos prédios dos clientes e clima), de jan/2024 a set/2026, com dados gerados por simulação.",
