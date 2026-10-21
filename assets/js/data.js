@@ -111,6 +111,45 @@ window.PORTFOLIO = {
 
   projetos: [
     {
+      id: "margem-corporativa",
+      titulo: "Queda de margem em restaurantes corporativos",
+      categoria: "Análise de causa raiz",
+      ano: 2026,
+      periodo: "out. 2026",
+      papel: "Projeto individual",
+      resumo:
+        "Investigação de por que a margem de contribuição dos restaurantes corporativos de uma operadora de refeições coletivas caiu de 29,4% para 21,6% em um ano, mesmo com reajuste anual de preço.",
+      capa: "assets/img/projetos/margem-corporativa/capa.svg",
+      github: "https://github.com/pablo-francisco/NUTRIA-ANALYSIS",
+      demo: "https://nutria-analysis-teste-pablo.streamlit.app",
+      stack: ["Python", "SQL (SQLite)", "pandas", "matplotlib", "Streamlit"],
+      contexto:
+        "Empresas de refeições coletivas cobram por refeição servida, mas pagam pela comida produzida, então qualquer descompasso entre as duas vira prejuízo. Montei um banco relacional com 22 tabelas de uma empresa fictícia (produção diária, faturamento, compras, folha, CRM, catraca dos prédios dos clientes e clima), de jan/2024 a set/2026, com dados gerados por simulação.",
+      abordagem: [
+        { titulo: "Grupo de controle", texto: "Usei os outros segmentos (hospitalar, industrial e educacional) para testar e descartar a hipótese de inflação dos alimentos." },
+        { titulo: "Custo por refeição produzida × servida", texto: "Separei o custo do que foi produzido do custo do que foi servido, o que mostrou que o problema era desperdício, não preço do quilo." },
+        { titulo: "Perfil da semana e detecção da quebra", texto: "Medi o volume de cada dia da semana em relação a terça–quinta e escrevi uma regra em SQL para datar a mudança de padrão em cada unidade." },
+        { titulo: "Confirmação em fontes externas", texto: "Cruzei a data detectada com anotações em texto livre do CRM e estimei vendas perdidas com a catraca dos prédios dos clientes." },
+        { titulo: "Simulação da correção", texto: "Testei no histórico uma regra de planejamento por dia da semana, em SQL e em Python, e publiquei um simulador em Streamlit." }
+      ],
+      resultados: [
+        { valor: "R$ 9,0 mi", descricao: "de economia anual em insumos com planejamento por dia da semana" },
+        { valor: "15 de 15", descricao: "unidades em que a quebra detectada nos dados coincide com a semana anunciada no CRM" },
+        { valor: "452 t", descricao: "de comida pronta descartada em 12 meses nas unidades com trabalho híbrido" }
+      ],
+      aprendizados: [
+        "O erro médio de previsão escondia o problema: a sobra de segunda e sexta compensava a falta de terça a quinta.",
+        "A confirmação da causa estava num dado que ninguém consultava: o texto livre do CRM.",
+        "Um detalhe no cálculo da semana em SQL deslocava a detecção em 7 dias justamente onde ela importava."
+      ],
+      galeria: [
+        { src: "assets/img/projetos/margem-corporativa/c1_margem_por_segmento.png", legenda: "Margem de contribuição por segmento: só o Corporativo caiu" },
+        // { src: "assets/img/projetos/margem-corporativa/c1_perfil_semana_heatmap.png", legenda: "Segunda e sexta esvaziaram nas unidades com sobra alta" },
+        // { src: "assets/img/projetos/margem-corporativa/c1_quebra_vs_crm.png", legenda: "Quebra detectada nos dados × aviso registrado no CRM" },
+        { src: "assets/img/projetos/margem-corporativa/c1_dia_da_semana.png", legenda: "Sobra na segunda e na sexta, falta de terça a quinta" },
+        { src: "assets/img/projetos/margem-corporativa/c1_simulacao_mensal.png", legenda: "Custo mensal do excedente com e sem o plano por dia da semana" }
+      ]
+    },{
       id: "epidemias-sird",
       titulo: "Modelagem híbrida de propagação de epidemias ao longo do tempo",
       categoria: "Machine learning",
@@ -202,46 +241,7 @@ window.PORTFOLIO = {
         // { src: "assets/img/projetos/sentimento-ecommerce/grafico-2.svg", legenda: "Distribuição das notas de avaliação" }
       ]
     },
-    {
-      id: "margem-corporativa",
-      titulo: "Queda de margem em restaurantes corporativos",
-      categoria: "Análise de causa raiz",
-      ano: 2026,
-      periodo: "out. 2026",
-      papel: "Projeto individual",
-      resumo:
-        "Investigação de por que a margem de contribuição dos restaurantes corporativos de uma operadora de refeições coletivas caiu de 29,4% para 21,6% em um ano, mesmo com reajuste anual de preço.",
-      capa: "assets/img/projetos/margem-corporativa/capa.svg",
-      github: "https://github.com/pablo-francisco/NUTRIA-ANALYSIS",
-      demo: "https://nutria-analysis-teste-pablo.streamlit.app",
-      stack: ["Python", "SQL (SQLite)", "pandas", "matplotlib", "Streamlit"],
-      contexto:
-        "Empresas de refeições coletivas cobram por refeição servida, mas pagam pela comida produzida, então qualquer descompasso entre as duas vira prejuízo. Montei um banco relacional com 22 tabelas de uma empresa fictícia (produção diária, faturamento, compras, folha, CRM, catraca dos prédios dos clientes e clima), de jan/2024 a set/2026, com dados gerados por simulação.",
-      abordagem: [
-        { titulo: "Grupo de controle", texto: "Usei os outros segmentos (hospitalar, industrial e educacional) para testar e descartar a hipótese de inflação dos alimentos." },
-        { titulo: "Custo por refeição produzida × servida", texto: "Separei o custo do que foi produzido do custo do que foi servido, o que mostrou que o problema era desperdício, não preço do quilo." },
-        { titulo: "Perfil da semana e detecção da quebra", texto: "Medi o volume de cada dia da semana em relação a terça–quinta e escrevi uma regra em SQL para datar a mudança de padrão em cada unidade." },
-        { titulo: "Confirmação em fontes externas", texto: "Cruzei a data detectada com anotações em texto livre do CRM e estimei vendas perdidas com a catraca dos prédios dos clientes." },
-        { titulo: "Simulação da correção", texto: "Testei no histórico uma regra de planejamento por dia da semana, em SQL e em Python, e publiquei um simulador em Streamlit." }
-      ],
-      resultados: [
-        { valor: "R$ 9,0 mi", descricao: "de economia anual em insumos com planejamento por dia da semana" },
-        { valor: "15 de 15", descricao: "unidades em que a quebra detectada nos dados coincide com a semana anunciada no CRM" },
-        { valor: "452 t", descricao: "de comida pronta descartada em 12 meses nas unidades com trabalho híbrido" }
-      ],
-      aprendizados: [
-        "O erro médio de previsão escondia o problema: a sobra de segunda e sexta compensava a falta de terça a quinta.",
-        "A confirmação da causa estava num dado que ninguém consultava: o texto livre do CRM.",
-        "Um detalhe no cálculo da semana em SQL deslocava a detecção em 7 dias justamente onde ela importava."
-      ],
-      galeria: [
-        { src: "assets/img/projetos/margem-corporativa/c1_margem_por_segmento.png", legenda: "Margem de contribuição por segmento: só o Corporativo caiu" },
-        // { src: "assets/img/projetos/margem-corporativa/c1_perfil_semana_heatmap.png", legenda: "Segunda e sexta esvaziaram nas unidades com sobra alta" },
-        // { src: "assets/img/projetos/margem-corporativa/c1_quebra_vs_crm.png", legenda: "Quebra detectada nos dados × aviso registrado no CRM" },
-        { src: "assets/img/projetos/margem-corporativa/c1_dia_da_semana.png", legenda: "Sobra na segunda e na sexta, falta de terça a quinta" },
-        { src: "assets/img/projetos/margem-corporativa/c1_simulacao_mensal.png", legenda: "Custo mensal do excedente com e sem o plano por dia da semana" }
-      ]
-    },
+    
    
   ],
 
